@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact - Ott Communications</title>
+	 <style>
+      #map {
+        width: 960px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(38.26728887035871, -85.50921268979594),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var image = 'images/map_pin-16-small.png';
+        var beachMarker = new google.maps.Marker({
+          position: {lat: 38.26728887035871, lng: -85.50921268979594},
+          map: map,
+          icon: image
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+ 
+</head>
+<body>
+	<div id="map"></div>
+</body>
+</html>
